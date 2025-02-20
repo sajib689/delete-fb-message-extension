@@ -11,7 +11,11 @@ const Sidebar: React.FC = () => {
       ];
       const handleDelete=() => {
         setLoading(true)
-        
+        setTimeout(() => {
+            alert('selected message deleted')
+            setLoading(false)
+            setSelectedChats([])
+        },2000)
       }
       const handleSelect =(id: string) => {
         setSelectedChats((prev) => prev.includes(id) ? prev.filter(chat => chat !== id) : [...prev, id]);
